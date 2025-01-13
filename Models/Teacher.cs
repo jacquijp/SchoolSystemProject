@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolSystemProject.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace SchoolSystemProject.Models
 {
-    internal class Teacher : Person
+    internal class Teacher : Person, IContactable
     {
         public string SubjectSpecialization { get; set; }
+
+        public void ShowContactInfo()
+        {
+            Console.WriteLine($"Teacher {FullName} can be contacted at: {Phone} or {Email}");
+        }
 
         public override void DisplayRole() // This demonstrates polymorphism with the DisplayRole method. It is an abstract method defined in the Person class, but it is implemented with specific behavior in both the Teacher and Student classes.
 

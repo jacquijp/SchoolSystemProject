@@ -27,6 +27,8 @@ namespace SchoolSystemProject.Models
         }
         public int Age { get; set; }
         public string Address { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
         public bool HasMedicalCondition { get; set; }
         public List<Subject> Subjects { get; set; } = new List<Subject>(); //initializing List so every time that an object is created, the list will be empty from the begginig.
 

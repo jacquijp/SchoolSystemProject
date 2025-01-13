@@ -54,12 +54,16 @@ var student1 = new Student
     LastName = "Jimenez",
     Age = 30,
     Address = "Ostervägen 9A",
+    Phone = "3329038635",
+    Email = "jacquelinejp2019@gmail.com",
     HasMedicalCondition = false,
-    Subjects = new List<Subject> { mathematics, english }
+    Subjects = new List<Subject> { mathematics, english },
+    GradeLevel = "Semester 1"
 };
 
 student1.PrintSubjects();
 student1.DisplayRole();
+student1.ShowContactInfo();
 
 //This is the old way to declare a new object. The on that I used 1st. More explicit.
 /*person1.Id = 1;
@@ -78,6 +82,8 @@ var teacher1 = new Teacher
     LastName = "Ordoyo",
     Age = 40,
     Address = "Solnavägen 10",
+    Phone = "0739876856",
+    Email = "jacquise24@gmail.com",
     HasMedicalCondition = true,
     SubjectSpecialization = "Chemistry",
     Subjects = new List<Subject> { chemistry }
@@ -92,6 +98,7 @@ teacher1.HasMedicalCondition = true; */
 
 teacher1.PrintSubjects();
 teacher1.DisplayRole();
+teacher1.ShowContactInfo();
 
 enum Modality
 {
