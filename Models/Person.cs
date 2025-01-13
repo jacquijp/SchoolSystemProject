@@ -21,9 +21,14 @@ namespace SchoolSystemProject.Models
             get { return _LastName; }
             set { _LastName = value.Trim(); }
         }
+        public string FullName
+        {
+            get { return $"{FirstName} {LastName}"; }
+        }
         public int Age;
         public string Address;
-        public List<Subject> Subjects;
+        public List<Subject> Subjects { get; set; } = new List<Subject>(); //initializing List so every time that an object is created, the list will be empty from the begginig.
+
         //public string[] Subjects; -- - This was used at first cause I didn't have class Subject set neither a way to call a list. Afther Subject class is created I must set the attribute like above.
         public bool HasMedicalCondition;
 
@@ -38,7 +43,10 @@ namespace SchoolSystemProject.Models
         {
             foreach (var item in Subjects)
             {
-                Console.WriteLine($"{FirstName} {LastName} is enrolled on: {item.SubjectName}");
+
+                Console.WriteLine($"{FullName} is enrolled on: {item.SubjectName}");
+                
+                //Console.WriteLine($"{FirstName} {LastName} is enrolled on: {item.SubjectName}"); -- excluded because FullName has been created and this is not needed now.
             }
         }
     }
