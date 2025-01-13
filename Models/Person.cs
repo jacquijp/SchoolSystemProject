@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SchoolSystemProject.Models
 {
-    class Person
+    abstract class Person
     {
         private string _FirstName;
         private string _LastName;
-        public int Id;
+        public int Id { get; set; }
         public string FirstName
         {
             get { return _FirstName; }
@@ -25,20 +25,14 @@ namespace SchoolSystemProject.Models
         {
             get { return $"{FirstName} {LastName}"; }
         }
-        public int Age;
-        public string Address;
+        public int Age { get; set; }
+        public string Address { get; set; }
+        public bool HasMedicalCondition { get; set; }
         public List<Subject> Subjects { get; set; } = new List<Subject>(); //initializing List so every time that an object is created, the list will be empty from the begginig.
 
         //public string[] Subjects; -- - This was used at first cause I didn't have class Subject set neither a way to call a list. Afther Subject class is created I must set the attribute like above.
-        public bool HasMedicalCondition;
-
-        public Person()
-        {
-            Id = 1;
-            Subjects = new List<Subject>();
-            HasMedicalCondition = false;
-        }
-
+        
+        public abstract void DisplayRole();
         public void PrintSubjects()
         {
             foreach (var item in Subjects)
