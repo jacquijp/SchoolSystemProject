@@ -8,9 +8,19 @@ namespace SchoolSystemProject.Models
 {
     class Person
     {
+        private string _FirstName;
+        private string _LastName;
         public int Id;
-        public string FirstName;
-        public string LastName;
+        public string FirstName
+        {
+            get { return _FirstName; }
+            set {  _FirstName = value.Trim(); }        
+        }
+        public string LastName
+        {
+            get { return _LastName; }
+            set { _LastName = value.Trim(); }
+        }
         public int Age;
         public string Address;
         public List<Subject> Subjects;
